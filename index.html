@@ -50,4 +50,222 @@
     .btn { display: inline-block; padding: 12px 18px; border-radius: 8px; text-decoration: none; font-weight: 700; }
     .btn.primary { background: var(--rose); color: var(--white); }
     .btn.primary:hover { background: var(--rose-dark); }
-    .btn.secondary { border: 1px solid
+    .btn.secondary { border: 1px solid var(--line); color: var(--ink); background: var(--white); }
+    section { padding: 70px 0; }
+    section:nth-of-type(even) { background: #fff; }
+    .section-head { margin-bottom: 28px; }
+    h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); line-height: 1.2; margin: 0 0 10px; letter-spacing: -.025em; }
+    .subhead { color: var(--muted); margin: 0; max-width: 650px; }
+    .skills { display: flex; flex-wrap: wrap; gap: 12px; }
+    .skill { background: var(--blush); color: #68464b; border: 1px solid #f0e2e1; padding: 10px 15px; border-radius: 999px; font-weight: 650; font-size: .94rem; }
+    .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+    .card { border: 1px solid var(--line); border-radius: 14px; padding: 24px; background: var(--white); display: flex; flex-direction: column; min-height: 290px; }
+    .number { color: var(--rose); font-weight: 800; font-size: .82rem; letter-spacing: .12em; }
+    .card h3 { font-size: 1.2rem; line-height: 1.3; margin: 10px 0; }
+    .card p { color: var(--muted); margin: 0 0 18px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: auto; padding-top: 8px; }
+    .tag { font-size: .78rem; background: #f8f5f4; border-radius: 5px; padding: 4px 8px; color: #66595a; }
+    .note { margin-top: 24px; padding: 16px 18px; background: #fbf5f4; border-left: 3px solid var(--rose); color: var(--muted); border-radius: 4px; }
+    .profile { display: grid; grid-template-columns: 260px 1fr; gap: 44px; align-items: center; }
+    .photo { width: 260px; height: 260px; border-radius: 50%; border: 6px solid var(--blush); background: var(--blush); overflow: hidden; display: flex; align-items: center; justify-content: center; color: var(--rose-dark); font-size: 4rem; font-weight: 800; letter-spacing: .04em; }
+    .photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .profile h2 { margin-bottom: 4px; }
+    .role { color: var(--rose-dark); font-weight: 700; margin: 0 0 16px; }
+    .profile .bio { color: var(--muted); max-width: 620px; margin: 0 0 20px; }
+    .facts { list-style: none; padding: 0; margin: 0 0 22px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 24px; max-width: 560px; }
+    .facts li { font-size: .95rem; color: var(--muted); }
+    .facts strong { display: block; color: var(--ink); font-size: .8rem; }
+    @media (max-width: 760px) {
+      .profile { grid-template-columns: 1fr; gap: 24px; text-align: left; }
+      .photo { width: 180px; height: 180px; font-size: 3rem; }
+      .facts { grid-template-columns: 1fr; }
+    }
+    .contact { background: var(--ink); color: var(--white); }
+    .contact .subhead { color: #d8cccc; }
+    .contact a { color: #f0cbd0; }
+    footer { padding: 22px 0; color: var(--muted); font-size: .9rem; border-top: 1px solid var(--line); }
+    @media (max-width: 760px) {
+      nav { align-items: flex-start; flex-direction: column; padding: 16px 0; gap: 10px; }
+      .navlinks { gap: 14px; }
+      .hero { padding: 66px 0; }
+      section { padding: 54px 0; }
+      .grid { grid-template-columns: 1fr; }
+      .card { min-height: auto; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="wrap" aria-label="Main navigation">
+      <a class="brand" href="#home">YOUR NAME</a>
+      <div class="navlinks">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="wrap">
+        <div class="eyebrow">Marketing Portfolio</div>
+        <h1>Creative thinking.<br>Strategic marketing.</h1>
+        <p class="intro">I am a Rutgers Business School marketing student interested in using consumer insights, creative strategy, and data-driven thinking to help brands connect with their audiences.</p>
+        <div class="buttons">
+          <a class="btn primary" href="#projects">Explore My Projects ↓</a>
+          <a class="btn secondary" href="#contact">Get in Touch</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap profile">
+        <div class="photo" id="p-photo" role="img" aria-label="Profile photo"></div>
+        <div>
+          <h2 id="p-name"></h2>
+          <p class="role" id="p-role"></p>
+          <p class="bio" id="p-bio"></p>
+          <ul class="facts" id="p-facts"></ul>
+          <div class="buttons" style="margin-top:0">
+            <a class="btn primary" id="p-email" href="#">Email Me</a>
+            <a class="btn secondary" id="p-linkedin" href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">What I bring</div>
+          <h2>Skills</h2>
+          <p class="subhead">A mix of marketing, business, communication, and customer-facing skills.</p>
+        </div>
+        <div class="skills">
+          <span class="skill">Marketing Strategy</span>
+          <span class="skill">Consumer Behavior</span>
+          <span class="skill">Business Research</span>
+          <span class="skill">Brand Promotion</span>
+          <span class="skill">Social Media Marketing</span>
+          <span class="skill">Customer Service</span>
+          <span class="skill">Team Collaboration</span>
+          <span class="skill">Presentation Skills</span>
+          <span class="skill">Strategic Planning</span>
+          <span class="skill">Data-Informed Decision-Making</span>
+        </div>
+        <p class="note"><strong>Before submitting:</strong> Keep only skills you can confidently discuss in an interview. Add specific tools such as Excel, Canva, or Google Analytics only if you have used them.</p>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Selected work</div>
+          <h2>Projects</h2>
+          <p class="subhead">Coursework and simulations that demonstrate my approach to business challenges and marketing questions.</p>
+        </div>
+        <div class="grid">
+          <article class="card">
+            <div class="number">PROJECT 01</div>
+            <h3>RU Healthy? — Campus Business Strategy</h3>
+            <p>Co-developed a hypothetical student-run campus food business, including its customer value proposition, strategic and financial goals, CSR initiatives, and an international expansion concept for the UK market.</p>
+            <div class="tags">
+              <span class="tag">Business Strategy</span><span class="tag">Financial Goals</span><span class="tag">CSR</span>
+            </div>
+          </article>
+          <article class="card">
+            <div class="number">PROJECT 02</div>
+            <h3>GreenTrail Outdoors — Promotion Strategy</h3>
+            <p>Analyzed retail promotion performance in a job simulation and developed recommendations for testing and improving in-store promotions while supporting the brand’s sustainability goals.</p>
+            <div class="tags">
+              <span class="tag">Marketing Analytics</span><span class="tag">Promotions</span><span class="tag">Sustainability</span>
+            </div>
+          </article>
+          <article class="card">
+            <div class="number">PROJECT 03</div>
+            <h3>Beauty Industry — Company Research</h3>
+            <p>Researched Estée Lauder Companies, including its brand portfolio, business model, competitors, customers, culture, and potential career pathways related to beauty and supply chain interests.</p>
+            <div class="tags">
+              <span class="tag">Market Research</span><span class="tag">Brand Portfolio</span><span class="tag">Career Research</span>
+            </div>
+          </article>
+        </div>
+        <p class="note"><strong>Project links:</strong> If you have a report, slide deck, spreadsheet, or GitHub repository for a project, add a public link to the relevant card. Do not link private class files or share confidential information. If no public artifact exists, these descriptions can serve as project references, but adding a permitted sample will strengthen the portfolio.</p>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="wrap">
+        <div class="eyebrow">Let's connect</div>
+        <h2>Interested in working together?</h2>
+        <p class="subhead">I am interested in learning from marketing and business professionals and exploring internship opportunities.</p>
+        <div class="buttons">
+          <!-- Replace the placeholder email and LinkedIn URL below before publishing. -->
+          <a class="btn primary" href="mailto:your.email@example.com">Email Me</a>
+          <a class="btn secondary" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">© <span id="year">2026</span> <span class="js-name">Your Name</span> · Built with HTML and CSS</div>
+  </footer>
+
+  <script>
+    /* ===== EDIT YOUR PROFILE HERE ===== */
+    const profile = {
+      name: "Helena Sefat",
+      role: "Marketing Student, Rutgers Business School",
+      bio: "I study marketing at Rutgers Business School and enjoy exploring how businesses understand customers, build strong brands, and turn ideas into practical strategies. I am especially interested in the beauty and fashion industries, brand marketing, and business development.",
+      photo: "",   // e.g. "me.jpg" (put the image in the same folder). Leave empty to show your initials.
+      email: "hs1273@scarletmail.rutgers.edu",
+      linkedin: "https://www.linkedin.com/in/your-profile",
+      facts: [
+        { label: "School", value: "Rutgers Business School" },
+        { label: "Major", value: "Marketing" },
+        { label: "Graduation", value: "Add year" },
+        { label: "Location", value: "New Jersey" }
+      ]
+    };
+    /* ===== END OF PROFILE ===== */
+
+    const $ = id => document.getElementById(id);
+    document.title = "Marketing Portfolio | " + profile.name;
+    $("p-name").textContent = profile.name;
+    $("p-role").textContent = profile.role;
+    $("p-bio").textContent = profile.bio;
+    $("p-email").href = "mailto:" + profile.email;
+    $("p-linkedin").href = profile.linkedin;
+    document.querySelectorAll(".brand").forEach(el => el.textContent = profile.name.toUpperCase());
+    document.querySelectorAll(".js-name").forEach(el => el.textContent = profile.name);
+    document.querySelectorAll("a[href^='mailto:']").forEach(a => a.href = "mailto:" + profile.email);
+    document.querySelectorAll("a[href*='linkedin.com']").forEach(a => a.href = profile.linkedin);
+    $("year").textContent = new Date().getFullYear();
+
+    const photo = $("p-photo");
+    if (profile.photo) {
+      const img = document.createElement("img");
+      img.src = profile.photo;
+      img.alt = profile.name;
+      img.onerror = () => { photo.textContent = initials(); img.remove(); };
+      photo.appendChild(img);
+    } else {
+      photo.textContent = initials();
+    }
+    function initials() {
+      return profile.name.split(/\s+/).map(w => w[0]).join("").slice(0, 2).toUpperCase();
+    }
+
+    profile.facts.forEach(f => {
+      const li = document.createElement("li");
+      const label = document.createElement("strong");
+      label.textContent = f.label;
+      li.append(label, f.value);
+      $("p-facts").appendChild(li);
+    });
+  </script>
+</body>
+</html>
